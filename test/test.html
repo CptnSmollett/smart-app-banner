@@ -1,0 +1,85 @@
+﻿<html>
+	<head>
+		<script type="text/javascript" id="" src="http://tag.aticdn.net/565151/smarttag.js"></script>
+
+		<meta name="apple-itunes-app" content="app-id=561082205">
+		<meta name="google-play-app" content="app-id=ru.hh.android">
+
+		<link rel="stylesheet" href="./smart-app-banner.css" type="text/css" media="screen">
+		<link rel="apple-touch-icon" href="http://a3.mzstatic.com/us/r30/Purple30/v4/1c/85/c3/1c85c37f-dc03-5c68-2a5b-72a660855398/icon175x175.jpeg">
+		<link rel="android-touch-icon" href="http://a3.mzstatic.com/us/r30/Purple30/v4/1c/85/c3/1c85c37f-dc03-5c68-2a5b-72a660855398/icon175x175.jpeg">
+
+	</head>
+	<body>
+		test
+		<Script type="text/javascript">
+			var at_internet_tag = new ATInternet.Tracker.Tag();										
+			window.at_internet_tag.page.set({										
+			    name:document.location.host+document.location.pathname										
+			});										
+			//window.at_internet_tag.dispatch();										
+			
+
+			// custom code for Optimizely tag syncronization										
+			if (at_internet_test_creative()) {										
+			      at_internet_dispatch_test();										
+			} else {										
+			      window.at_internet_tag.onTrigger('Optimizely:success', function(trig, abmvc) {										
+			            at_internet_dispatch_test(abmvc);										
+			      });										
+			}										
+													
+			function at_internet_test_creative()										
+			{										
+			      return window.atinternetTestCreative;										
+			}										
+			function at_internet_dispatch_test(abmvc)										
+			{										
+			      if( typeof abmvc == 'undefined' && at_internet_test_creative() )										
+			      {										
+			            window.at_internet_tag.setParam( 'abmvc', at_internet_test_creative() );										
+			      } else if (typeof abmvc != 'undefined') {										
+			            window.at_internet_tag.setParam( 'abmvc', abmvc );										
+			      }										
+			      window.at_internet_tag.dispatch();										
+			}										
+
+		</script>
+
+		<script type="text/javascript" id="" src="https://cdn.optimizely.com/js/3398030425.js"></script>
+
+
+		<script type="text/javascript" src="http://consulting.intraxiti.com/daria/RT/smart-app-banner.full.js"></script>
+		<script type="text/javascript">
+	    	new SmartBanner({
+	        	title: 'Мой Ростелеком',
+	        	author: 'OAO "Rostelecom"',
+	        	button: 'ЗАГРУЗИТЬ',
+	        	store: {
+	        		ios: 'в App Store',
+	        		android: 'в Google Play'
+	        	},
+	        	price: {
+	        		ios: 'БЕСПЛАТНО',
+	        		android: 'БЕСПЛАТНО'
+	        	}
+	        	// , theme: '' // put platform type ('ios', 'android', etc.) here to force single theme on all device
+	        	// , icon: '' // full path to icon image if not using website icon image
+	        	, force: 'ios' // Uncomment for platform emulation
+	      });
+	    </script>
+
+	</body>
+</html>
+
+
+<!-- 
+$('head').append('<meta name="apple-itunes-app" content="app-id=561082205">');
+$('head').append('<meta name="google-play-app" content="app-id=TODO">');
+
+$('head').append('<link rel="apple-touch-icon" href="http://a3.mzstatic.com/us/r30/Purple30/v4/1c/85/c3/1c85c37f-dc03-5c68-2a5b-72a660855398/icon175x175.jpeg">');
+$('head').append('<link rel="android-touch-icon" href="http://a3.mzstatic.com/us/r30/Purple30/v4/1c/85/c3/1c85c37f-dc03-5c68-2a5b-72a660855398/icon175x175.jpeg">');
+$('head').append('<link rel="stylesheet" href="node_modules/smart-app-banner/smart-app-banner.css" type="text/css" media="screen">');
+
+$('body').append('<script type="text/javascript" src="./smart-app-banner.js">');
+$('body').append('<script type="text/javascript">new SmartBanner({title: "Мой Ростелеком", author: \'OAO "Rostelecom"\',button: "ЗАГРУЗИТЬ",store: {ios: "в App Store",android: "в Google Play"},price: {ios: "БЕСПЛАТНО",android: "БЕСПЛАТНО"},icon: "http://a3.mzstatic.com/us/r30/Purple30/v4/1c/85/c3/1c85c37f-dc03-5c68-2a5b-72a660855398/icon175x175.jpeg", force: "ios"});</script>'); -->
